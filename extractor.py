@@ -22,9 +22,6 @@ password_encoded = urllib.parse.quote_plus(DB_PASSWORD)
 
 # Create global engine once
 engine = create_engine(f"mysql+mysqlconnector://{DB_USER}:{password_encoded}@{DB_HOST}:{DB_PORT}/{DB_NAME}")
-output_folder = f"CSV files/{DB_NAME}"
-if not os.path.exists(output_folder):
-    os.makedirs(output_folder)
 
 
 # Get list of table names
@@ -71,5 +68,4 @@ while True:
         break
     else:
         continue
-
 
